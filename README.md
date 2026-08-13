@@ -302,35 +302,49 @@ The current implementation is designed for the scope of the assignment. For a pr
 ```bash
 cd backend
 python -m venv .venv
+```
 
 Activate the virtual environment and install the dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
 Configure the required environment variables using:
+
+```text
 backend/.env.example
+```
 
 Start the FastAPI server:
+
+```bash
 python -m uvicorn app.main:app --reload --port 8001
-
-Backend API:
-http://127.0.0.1:8001
-
-Swagger documentation:
-http://127.0.0.1:8001/docs
 ```
+
+**Backend API:**  
+[http://127.0.0.1:8001](http://127.0.0.1:8001)
+
+**Swagger Documentation:**  
+[http://127.0.0.1:8001/docs](http://127.0.0.1:8001/docs)
+
 ### Frontend
-```
+
 Open a new terminal:
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 The frontend will be available at the local Vite URL displayed in the terminal.
+
 Configure the frontend to communicate with the local backend:
+
+```text
 http://127.0.0.1:8001
-
-`````
-
+```
 ## 📌 Assumptions
 
 - Uploaded files are expected to be valid vehicle images in supported image formats.
