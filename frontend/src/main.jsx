@@ -4,7 +4,8 @@ import "./style.css";
 
 const API_URL =
   import.meta.env.VITE_API_URL ||
-  "https://intelligent-vehicle-image-pipeline.vercel.app";
+  "http://127.0.0.1:8001";
+console.log("API URL:", API_URL);
 
 const ACCEPTED_TYPES = new Set([
   "image/jpeg",
