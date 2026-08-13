@@ -7,9 +7,14 @@ The pipeline evaluates image quality, brightness, perceptual similarity, number-
 
 The application is deployed and can be tested end-to-end using the links below.
 
-- **Live Frontend:** https://intelligent-vehicle-image-processin.vercel.app/
-- **Backend API:** https://intelligent-vehicle-image-processing.onrender.com/
-- **API Documentation:** https://intelligent-vehicle-image-processing.onrender.com/docs
+## 🔗 Live Demo
+
+The application is deployed and can be tested end-to-end using the links below.
+
+- **Live Frontend:** [Open Live Demo](https://intelligent-vehicle-image-processin.vercel.app/)
+- **Backend API:** [Open Backend API](https://intelligent-vehicle-image-processing.onrender.com/)
+- **API Documentation:** [Open Swagger Docs](https://intelligent-vehicle-image-processing.onrender.com/docs)
+- **GitHub Repository:** [View Source Code](https://github.com/sharanyaudayakumar7-ai/intelligent-vehicle-image-processing)
 - **GitHub Repository:** https://github.com/sharanyaudayakumar7-ai/intelligent-vehicle-image-processing
 
 The live frontend communicates with the deployed FastAPI backend to upload images, create processing jobs, track their status, and display the completed analysis results.
