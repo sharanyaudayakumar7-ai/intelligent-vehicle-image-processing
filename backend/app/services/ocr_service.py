@@ -1,7 +1,6 @@
 import logging
 
 import cv2
-import easyocr
 
 from app.services.plate_validator import find_indian_plate
 
@@ -12,18 +11,29 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 # OCR Reader
 # ---------------------------------------------------------------------------
-# EasyOCR model is initialized once when the application starts instead of
-# being recreated for every uploaded image.
+# EasyOCR is loaded lazily only when OCR is actually enabled and requested.
 #
-# This improves repeated-job performance significantly, at the cost of
-# keeping the OCR model loaded in memory.
+# This keeps the application lightweight when OCR is disabled, which is
+# useful for deployment environments where the EasyOCR/PyTorch dependency
+# footprint is too large.
 # ---------------------------------------------------------------------------
 
-reader = easyocr.Reader(
-    ["en"],
-    gpu=False,
-    verbose=False,
-)
+_reader = None
+
+
+def _get_reader():
+    global _reader
+
+    if _reader is None:
+        import easyocr
+
+        _reader = easyocr.Reader(
+            ["en"],
+            gpu=False,
+            verbose=False,
+        )
+
+    return _reader
 
 
 # ---------------------------------------------------------------------------
@@ -36,7 +46,7 @@ def _run_ocr(image):
     registration plate.
     """
 
-    return reader.readtext(
+    return _get_reader().readtext(
         image,
         allowlist="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
         detail=1,
