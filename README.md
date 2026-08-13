@@ -317,8 +317,9 @@ http://127.0.0.1:8001
 
 Swagger documentation:
 http://127.0.0.1:8001/docs
-
+```
 ### Frontend
+```
 Open a new terminal:
 cd frontend
 npm install
