@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./style.css";
 
 const API_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+  import.meta.env.VITE_API_URL ||
+  "https://intelligent-vehicle-image-pipeline.vercel.app";
 
 const ACCEPTED_TYPES = new Set([
   "image/jpeg",
@@ -73,7 +74,6 @@ function ResultDetails({ result }) {
 
   return (
     <div className="result-details">
-
       <div className="image-meta">
         <div>
           <span>Filename</span>
@@ -83,7 +83,9 @@ function ResultDetails({ result }) {
         <div>
           <span>Dimensions</span>
           <strong>
-            {image.width ? `${image.width} × ${image.height}` : "—"}
+            {image.width
+              ? `${image.width} × ${image.height}`
+              : "—"}
           </strong>
         </div>
 
@@ -94,7 +96,6 @@ function ResultDetails({ result }) {
       </div>
 
       <div className="checks-grid">
-
         <CheckCard
           title="Image quality"
           icon="✓"
@@ -111,7 +112,9 @@ function ResultDetails({ result }) {
           </div>
 
           <div className="check-result">
-            {blur.is_blurry ? "Blur detected" : "Image is sufficiently sharp"}
+            {blur.is_blurry
+              ? "Blur detected"
+              : "Image is sufficiently sharp"}
           </div>
         </CheckCard>
 
@@ -172,7 +175,9 @@ function ResultDetails({ result }) {
             <div>
               <span>Extracted text</span>
               <strong>
-                {plate.text || plate.extracted_text || "Not detected"}
+                {plate.text ||
+                  plate.extracted_text ||
+                  "Not detected"}
               </strong>
             </div>
 
@@ -180,7 +185,9 @@ function ResultDetails({ result }) {
               <span>Confidence</span>
               <strong>
                 {plate.confidence != null
-                  ? `${(Number(plate.confidence) * 100).toFixed(1)}%`
+                  ? `${(
+                      Number(plate.confidence) * 100
+                    ).toFixed(1)}%`
                   : "—"}
               </strong>
             </div>
@@ -219,7 +226,6 @@ function ResultDetails({ result }) {
               : "Image dimensions are below requirements"}
           </div>
         </CheckCard>
-
       </div>
     </div>
   );
