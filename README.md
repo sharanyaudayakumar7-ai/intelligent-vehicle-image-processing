@@ -3,9 +3,6 @@
 An asynchronous vehicle image analysis system that accepts uploaded images, creates a unique processing job, and performs multiple validation and analysis checks in the background.
 The pipeline evaluates image quality, brightness, perceptual similarity, number-plate information, and image dimensions, then stores and returns structured analysis results through a FastAPI backend and React frontend.
 
-## 🔗 Live Demo
-
-The application is deployed and can be tested end-to-end using the links below.
 
 ## 🔗 Live Demo
 
