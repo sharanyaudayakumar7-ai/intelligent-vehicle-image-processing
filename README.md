@@ -12,9 +12,11 @@ The application is deployed and can be tested end-to-end using the links below.
 - **Backend API:** [Open Backend API](https://intelligent-vehicle-image-processing.onrender.com/)
 - **API Documentation:** [Open Swagger Docs](https://intelligent-vehicle-image-processing.onrender.com/docs)
 - **GitHub Repository:** [View Source Code](https://github.com/sharanyaudayakumar7-ai/intelligent-vehicle-image-processing)
-- **GitHub Repository:** https://github.com/sharanyaudayakumar7-ai/intelligent-vehicle-image-processing
+
+> **Note:** The backend is hosted on Render's free tier and may take some time to wake after a period of inactivity. For the smoothest first-time test, open the Backend API or Swagger Docs first and allow the service to start. Then open the Live Frontend and upload an image. Once the backend is active, the frontend can communicate with it normally.
 
 The live frontend communicates with the deployed FastAPI backend to upload images, create processing jobs, track their status, and display the completed analysis results.
+
 
 <img width="1895" height="953" alt="live-frontend-results1" src="https://github.com/user-attachments/assets/110cb451-2223-48c6-a657-1636e8ae2bad" />
 <img width="1881" height="947" alt="live-frontend-results2" src="https://github.com/user-attachments/assets/780af869-6033-492b-8c31-ae4e78c6ddf3" />
